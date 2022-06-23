@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="calculadora.css">
+    <title>Calculadora</title>
+</head>
+<body>
+    <div class="container">
+        <div class="calculadora">
+            <div class="display">
+                <div class="display__number"><input type="number" min="0" oninput="validity.valid||(value='');" pattern="^[0-9]+" id="primerNumero">
+                </div>
+                <div class="display__number"><input type="number" min="0" oninput="validity.valid||(value='');" pattern="^[0-9]+" id="segundoNumero">
+                </div> 
+                <div id="resultado"></div>
+            </div>
+            <button id="sumar" class="boton">+</button>
+            <button id="restar" class="boton">-</button>
+            <button id="multiplicar" class="boton">x</button>
+            <button id="dividir" class="boton">÷</button>
+            <button id="potencia" class="boton">^</button>
+            <button id="raiz" class="boton">√</button>
+            <button id="cargar" class="boton" onClick="document.location.reload(true)">C</button>
+            <button id="salir" class="boton">Salir</button>
+        </div>
+    </div>
+    <script src="calculadora.js"></script>
+</body>
+</html>
