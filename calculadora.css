@@ -15,7 +15,7 @@ body{
     height: 100vh;
 }
 
-.calculadora{
+.calculator__box{
     display: grid;
     grid-template-columns: repeat(3, 75px);
     grid-template-rows: 160px repeat(3, 75px);

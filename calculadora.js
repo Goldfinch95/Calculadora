@@ -1,74 +1,101 @@
+const inputFirstNumber = document.getElementById ("input__Number-First");
+const inputSecondNumber = document.getElementById ("input__Number-Second");
+const btnAdd = document.getElementById("add");
+const btnSubtract = document.getElementById("subtract");
+const btnMultiply = document.getElementById("multiply");
+const btnSplit = document.getElementById("split");
+const btnPower = document.getElementById("power");
+const btnRoot = document.getElementById("root");
+const btnClean = document.getElementById("clean");
+const btnGoOut = document.getElementById("go_out");
 
-const botonSumar = document.querySelector ("#sumar");
-
-const suma = ()=>{
-  const primerNumero = Number(document.querySelector ("#primerNumero").value);
-   const segundoNumero = Number(document.querySelector ("#segundoNumero").value);
-     total = primerNumero + segundoNumero;
-     document.getElementById ("resultado").innerHTML = (`${total}`);
+const getInputs = () => {
+    const firstInputValue = Number(inputFirstNumber.value);
+    const secondInputValue = Number(inputSecondNumber.value);
+    return {firstInputValue, secondInputValue}
 }
 
-botonSumar.addEventListener ("click", suma);
-
-const botonRestar = document.querySelector ("#restar");
-
-const resta = ()=>{
-    const primerNumero = Number(document.querySelector ("#primerNumero").value);
-    const segundoNumero = Number(document.querySelector ("#segundoNumero").value);
-    total = primerNumero - segundoNumero;
-    document.getElementById("resultado").innerHTML = (`${total}`);
+const addNumbers = (firstNumber, secondNumber) => {
+    const result = firstNumber + secondNumber;
+    return result
 }
 
-botonRestar.addEventListener ("click", resta);
-
-const botonMultiplicar = document.querySelector ("#multiplicar");
-
-const multiplicar = ()=>{
-    const primerNumero = Number(document.querySelector ("#primerNumero").value);
-    const segundoNumero = Number(document.querySelector ("#segundoNumero").value);
-    total = primerNumero * segundoNumero;
-    document.getElementById ("resultado").innerHTML = (`${total}`);
+const subtractNumbers = (firstNumber, secondNumber) => {
+    const result = firstNumber - secondNumber;
+    return result
 }
 
-botonMultiplicar.addEventListener ("click", multiplicar);
-
-const botonDividir = document.querySelector ("#dividir");
-
-const dividir = ()=> {
-    const primerNumero = Number(document.querySelector ("#primerNumero").value);
-    const segundoNumero = Number(document.querySelector ("#segundoNumero").value);
-    total = primerNumero / segundoNumero;
-    document.getElementById ("resultado").innerHTML = (`${total}`);
+const multiplyNumbers = (firstNumber, secondNumber) => {
+    const result = firstNumber * secondNumber;
+    return result
 }
 
-botonDividir.addEventListener ("click", dividir);
-
-const botonPotencia = document.querySelector ("#potencia");
-
-const potencia = ()=>{
-    const primerNumero = Number(document.querySelector ("#primerNumero").value);
-    const segundoNumero = Number(document.querySelector ("#segundoNumero").value);
-    total = primerNumero ** segundoNumero;
-    document.getElementById ("resultado").innerHTML = (`${total}`);
+const divideNumbers = (firstNumber, secondNumber) => {
+    const result = firstNumber / secondNumber;
+    return result
 }
 
-botonPotencia.addEventListener ("click", potencia);
-
-const botonRaiz = document.querySelector ("#raiz");
-
-const raiz =()=>{
-    const primerNumero = Number(document.querySelector ("#primerNumero").value);
-    const segundoNumero = Number(document.querySelector ("#segundoNumero").value);
-    total = Math.pow(segundoNumero,(1/primerNumero));
-    document.getElementById ("resultado").innerHTML = (`${total}`);
+const boostNumbers = (firstNumber, secondNumber) => {
+    const result = firstNumber ** secondNumber;
+    return result
 }
 
-botonRaiz.addEventListener ("click", raiz);
+const rootNumbers = (firstNumber, secondNumber) => {
+    const result = Math.pow(secondNumber,(1/firstNumber));
+    return result
+}
 
-const botonSalir = document.querySelector("#salir");
+const deleteInputValues = ()=>{
+    document.getElementById('input__Number-First').value= '';
+    document.getElementById('input__Number-Second').value= '';
+}
 
-const salir =()=>{
+const showResults = (result)=>{
+    document.getElementById ("result").innerHTML = (`${result}`);
+}
+
+
+
+btnAdd.addEventListener("click", () => {
+    const {firstInputValue, secondInputValue} = getInputs();
+    const result = addNumbers(firstInputValue,secondInputValue);
+    showResults(result);
+})
+
+btnSubtract.addEventListener("click", () => {
+   const {firstInputValue, secondInputValue} = getInputs();
+   const result = subtractNumbers(firstInputValue,secondInputValue);
+   showResults(result);
+})
+
+btnMultiply.addEventListener("click", () => {
+    const {firstInputValue, secondInputValue} = getInputs();
+    const result = multiplyNumbers(firstInputValue,secondInputValue);
+    showResults(result);
+ })
+
+ btnSplit.addEventListener("click", () => {
+    const {firstInputValue, secondInputValue} = getInputs();
+    const result = divideNumbers(firstInputValue,secondInputValue);
+    showResults(result);
+ })
+
+ btnPower.addEventListener("click", ()=>{
+    const {firstInputValue, secondInputValue} = getInputs();
+    const result = boostNumbers(firstInputValue,secondInputValue);
+    showResults(result);
+ })
+
+ btnRoot.addEventListener("click", ()=>{
+    const {firstInputValue, secondInputValue} = getInputs();
+    const result = rootNumbers(firstInputValue,secondInputValue);
+    showResults(result);
+ })
+
+ btnClean.addEventListener("click", ()=>{
+    deleteInputValues();
+ })
+
+ btnGoOut.addEventListener("click", ()=>{
     window.close();
-}
-
-botonSalir.addEventListener ("click", salir);
+ })

@@ -10,22 +10,22 @@
 </head>
 <body>
     <div class="container">
-        <div class="calculadora">
+        <div class="calculator__box">
             <div class="display">
-                <div class="display__number"><input type="number" min="0" oninput="validity.valid||(value='');" pattern="^[0-9]+" id="primerNumero">
+                <div class="display__number"><input id="input__Number-First" type="number" min="0" oninput="validity.valid||(value='');" pattern="^[0-9]+" id="primerNumero">
                 </div>
-                <div class="display__number"><input type="number" min="0" oninput="validity.valid||(value='');" pattern="^[0-9]+" id="segundoNumero">
+                <div class="display__number"><input id="input__Number-Second" type="number" min="0" oninput="validity.valid||(value='');" pattern="^[0-9]+" id="segundoNumero">
                 </div> 
-                <div id="resultado"></div>
+                <div id="result"></div>
             </div>
-            <button id="sumar" class="boton">+</button>
-            <button id="restar" class="boton">-</button>
-            <button id="multiplicar" class="boton">x</button>
-            <button id="dividir" class="boton">÷</button>
-            <button id="potencia" class="boton">^</button>
-            <button id="raiz" class="boton">√</button>
-            <button id="cargar" class="boton" onClick="document.location.reload(true)">C</button>
-            <button id="salir" class="boton">Salir</button>
+            <button id="add" class="boton">+</button>
+            <button id="subtract" class="boton">-</button>
+            <button id="multiply" class="boton">x</button>
+            <button id="split" class="boton">÷</button>
+            <button id="power" class="boton">^</button>
+            <button id="root" class="boton">√</button>
+            <button id="clean" class="boton" onClick="document.location.reload(true)">C</button>
+            <button id="go_out" class="boton">Salir</button>
         </div>
     </div>
     <script src="calculadora.js"></script>
